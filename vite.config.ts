@@ -4,7 +4,7 @@ import { defineConfig } from "vite"
 
 export default defineConfig({
   plugins: [react()],
-  base: '/manus-dynamic-section',
+  base: '/manus-dynamic-section/',
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
