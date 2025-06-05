@@ -73,7 +73,7 @@ function App() {
     <div className="app">
       <header className="app-header">
         <div className="container header-content">
-          <div className="logo">动态配置页面</div>
+          <div className="logo">Sophie牌动态配置页面</div>
           <nav className="section-nav">
             <ul>
               {sections

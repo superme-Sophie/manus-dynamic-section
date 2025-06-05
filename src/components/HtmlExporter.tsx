@@ -294,7 +294,7 @@ const HtmlExporter: React.FC<HtmlExporterProps> = ({ sections }) => {
     </style>
 </head>
 <body>
-    <header>
+    <header style="margin-bottom: 40px">
         <div class="container header-content">
             <div class="logo">${title}</div>
             <nav>
@@ -306,6 +306,8 @@ const HtmlExporter: React.FC<HtmlExporterProps> = ({ sections }) => {
     </header>
 
     `;
+
+    html += "<div style='margin-top: 80px'>";
 
     // 添加每个section的内容
     sections.sort((a, b) => a.order - b.order).forEach(section => {
@@ -322,14 +324,10 @@ const HtmlExporter: React.FC<HtmlExporterProps> = ({ sections }) => {
     </section>`;
     });
 
+    html += "</div>";
+
     // 添加页脚
     html += `
-    <footer>
-        <div class="container footer-content">
-            <div class="copyright">© ${new Date().getFullYear()} ${title}</div>
-        </div>
-    </footer>
-    
     <script>
     // 初始化所有图表
     document.addEventListener('DOMContentLoaded', function() {

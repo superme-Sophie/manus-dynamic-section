@@ -118,6 +118,7 @@ body {
   display: flex;
   flex: 1;
   position: relative;
+  margin-top: 80px;
 }
 
 .content-area {
