@@ -1,7 +1,7 @@
 .html-exporter {
-  position: fixed;
-  top: 80px;
-  right: 180px; /* 调整位置，避免与ExportPanel重叠 */
+  /*position: fixed;*/
+  /*top: 80px;*/
+  /*right: 180px; !* 调整位置，避免与ExportPanel重叠 *!*/
   z-index: 999;
 }
 
