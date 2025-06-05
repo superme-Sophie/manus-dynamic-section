@@ -450,14 +450,14 @@ const HtmlExporter: React.FC<HtmlExporterProps> = ({ sections }) => {
         
       case 'chart':
         // 使用Canvas和Chart.js渲染图表，而不是显示原始数据
-        const chartType = section.content.type || 'bar';
+        { const chartType = section.content.type || 'bar';
         const chartData = section.content.data || { labels: [], values: [] };
         
         return `<div class="chart-content">
             <div class="chart-container">
                 <canvas class="chart-canvas" data-type="${chartType}" data-chart='${JSON.stringify(chartData)}'></canvas>
             </div>
-        </div>`;
+        </div>`; }
         
       default:
         return `<div>未知的章节类型</div>`;

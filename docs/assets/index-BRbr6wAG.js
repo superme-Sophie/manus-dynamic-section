@@ -530,30 +530,30 @@ Error generating stack: `+b.message+`
 </body>
 </html>`,o},r=o=>{switch(o.type){case"text":return`<div class="text-content">
             ${o.content.split(`
-`).map(h=>`<p>${h}</p>`).join(`
+`).map(c=>`<p>${c}</p>`).join(`
             `)}
         </div>`;case"image":const l=Array.isArray(o.content)?o.content:o.content&&o.content.data?[o.content]:[];let u="";return l.length===1?u="grid-1":l.length===2?u="grid-2":l.length>2&&(u="grid-3"),`<div class="image-content">
             <div class="image-grid ${u}">
-                ${l.map((h,g)=>`
-                <div class="image-item" ${h.width?`style="width: ${h.width}px; height: ${h.height}px;"`:""}>
-                    <img src="${h.data}" alt="${h.name||`图片 ${g+1}`}" class="section-image">
+                ${l.map((c,f)=>`
+                <div class="image-item" ${c.width?`style="width: ${c.width}px; height: ${c.height}px;"`:""}>
+                    <img src="${c.data}" alt="${c.name||`图片 ${f+1}`}" class="section-image">
                 </div>`).join("")}
             </div>
         </div>`;case"cards":return`<div class="cards-content">
-            ${Array.isArray(o.content)?o.content.map(h=>`
+            ${Array.isArray(o.content)?o.content.map(c=>`
             <div class="card">
-                <h3 class="card-title">${h.title}</h3>
+                <h3 class="card-title">${c.title}</h3>
                 <div class="card-body">
-                    ${h.content.split(`
-`).map(g=>`<p>${g}</p>`).join(`
+                    ${c.content.split(`
+`).map(f=>`<p>${f}</p>`).join(`
                     `)}
                 </div>
             </div>`).join(""):""}
-        </div>`;case"chart":const c=o.content.type||"bar",f=o.content.data||{labels:[],values:[]};return`<div class="chart-content">
+        </div>`;case"chart":{const c=o.content.type||"bar",f=o.content.data||{labels:[],values:[]};return`<div class="chart-content">
             <div class="chart-container">
                 <canvas class="chart-canvas" data-type="${c}" data-chart='${JSON.stringify(f)}'></canvas>
             </div>
-        </div>`;default:return"<div>未知的章节类型</div>"}},i=()=>{const o=n(),l=new Blob([o],{type:"text/html"}),u=URL.createObjectURL(l),c=document.createElement("a");c.href=u,c.download=`${e.replace(/\s+/g,"-")}_${new Date().toISOString().slice(0,10)}.html`,document.body.appendChild(c),c.click(),document.body.removeChild(c),URL.revokeObjectURL(u);const f=document.createElement("div");f.className="export-notification success",f.textContent="HTML导出成功！",document.body.appendChild(f),setTimeout(()=>{document.body.removeChild(f)},3e3)};return L.jsx("div",{className:"html-exporter",children:L.jsxs("button",{className:"export-html-button",onClick:i,title:"导出为HTML文档",children:[L.jsx(gI,{className:"export-icon"}),L.jsx("span",{children:"导出HTML"})]})})},e9=()=>"section_"+Math.random().toString(36).substr(2,9);function t9(){const[t,e]=U.useState([]),[n,r]=U.useState(null),i=U.useRef(null);U.useEffect(()=>{const h=[{id:e9(),title:"欢迎使用动态配置页面",type:"text",content:`这是一个支持动态配置section和上传图片的HTML界面。
+        </div>`}default:return"<div>未知的章节类型</div>"}},i=()=>{const o=n(),l=new Blob([o],{type:"text/html"}),u=URL.createObjectURL(l),c=document.createElement("a");c.href=u,c.download=`${e.replace(/\s+/g,"-")}_${new Date().toISOString().slice(0,10)}.html`,document.body.appendChild(c),c.click(),document.body.removeChild(c),URL.revokeObjectURL(u);const f=document.createElement("div");f.className="export-notification success",f.textContent="HTML导出成功！",document.body.appendChild(f),setTimeout(()=>{document.body.removeChild(f)},3e3)};return L.jsx("div",{className:"html-exporter",children:L.jsxs("button",{className:"export-html-button",onClick:i,title:"导出为HTML文档",children:[L.jsx(gI,{className:"export-icon"}),L.jsx("span",{children:"导出HTML"})]})})},e9=()=>"section_"+Math.random().toString(36).substr(2,9);function t9(){const[t,e]=U.useState([]),[n,r]=U.useState(null),i=U.useRef(null);U.useEffect(()=>{const h=[{id:e9(),title:"欢迎使用动态配置页面",type:"text",content:`这是一个支持动态配置section和上传图片的HTML界面。
 
 您可以通过右侧的章节管理面板添加、编辑、删除和重新排序章节。
 
