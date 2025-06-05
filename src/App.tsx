@@ -73,7 +73,11 @@ function App() {
     <div className="app">
       <header className="app-header">
         <div className="container header-content">
-          <div className="logo">Sophie牌动态配置页面</div>
+          <div className="logo">
+            Sophie牌动态配置页面
+            <ExportPanel contentRef={contentRef} />
+            <HtmlExporter sections={sections} />
+          </div>
           <nav className="section-nav">
             <ul>
               {sections
@@ -136,9 +140,6 @@ function App() {
           onCancel={handleCancelEdit} 
         />
       )}
-      
-      <ExportPanel contentRef={contentRef} />
-      <HtmlExporter sections={sections} />
 
     </div>
   );
