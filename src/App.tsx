@@ -1,5 +1,5 @@
-import { useState, useRef, useEffect } from 'react';
-import { DragDropContext, Droppable, Draggable, DropResult } from 'react-beautiful-dnd';
+import { useState, useRef, useEffect, SetStateAction} from 'react';
+import {DragDropContext, Droppable, Draggable, DropResult} from 'react-beautiful-dnd';
 import SectionManager from './components/SectionManager';
 import SectionRenderer from './components/SectionRenderer';
 import SectionEditor from './components/SectionEditor';
@@ -17,10 +17,6 @@ interface Section {
 }
 
 // 生成唯一ID
-const generateId = () => {
-  return 'section_' + Math.random().toString(36).substr(2, 9);
-};
-
 function App() {
   const [sections, setSections] = useState<Section[]>([]);
   const [editingSection, setEditingSection] = useState<Section | null>(null);
@@ -28,15 +24,7 @@ function App() {
 
   // 初始化示例数据
   useEffect(() => {
-    const initialSections = [
-      {
-        id: generateId(),
-        title: '欢迎使用动态配置页面',
-        type: 'text' as const,
-        content: '这是一个支持动态配置section和上传图片的HTML界面。\n\n您可以通过右侧的章节管理面板添加、编辑、删除和重新排序章节。\n\n完成编辑后，您可以使用顶部的导出按钮将整个页面导出为图片或HTML文档。',
-        order: 0
-      }
-    ];
+    const initialSections: SetStateAction<Section[]> = [];
     setSections(initialSections);
   }, []);
 
@@ -100,13 +88,6 @@ function App() {
         </div>
       </header>
       
-      <div className="hero">
-        <div className="container hero-content">
-          <h1>动态配置页面生成器</h1>
-          <p>轻松创建、编辑和导出精美的页面</p>
-        </div>
-      </div>
-      
       <div className="main-content">
         <div className="content-area" ref={contentRef}>
           <DragDropContext onDragEnd={handleDragEnd}>
@@ -158,12 +139,7 @@ function App() {
       
       <ExportPanel contentRef={contentRef} />
       <HtmlExporter sections={sections} />
-      
-      <footer>
-        <div className="container footer-content">
-          <div className="copyright">© 2025 动态配置页面生成器</div>
-        </div>
-      </footer>
+
     </div>
   );
 }

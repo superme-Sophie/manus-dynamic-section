@@ -15,7 +15,7 @@ interface HtmlExporterProps {
 }
 
 const HtmlExporter: React.FC<HtmlExporterProps> = ({ sections }) => {
-  const title = "动态章节配置工具"; // 默认标题
+  const title = "@Sophie"; // 默认标题
   
   const generateHtml = () => {
     // 创建基础HTML结构
@@ -305,12 +305,7 @@ const HtmlExporter: React.FC<HtmlExporterProps> = ({ sections }) => {
         </div>
     </header>
 
-    <div class="hero">
-        <div class="container hero-content">
-            <h1>${title}</h1>
-            <p>动态配置生成的页面</p>
-        </div>
-    </div>`;
+    `;
 
     // 添加每个section的内容
     sections.sort((a, b) => a.order - b.order).forEach(section => {
@@ -450,14 +445,14 @@ const HtmlExporter: React.FC<HtmlExporterProps> = ({ sections }) => {
         
       case 'chart':
         // 使用Canvas和Chart.js渲染图表，而不是显示原始数据
-        { const chartType = section.content.type || 'bar';
+        const chartType = section.content.type || 'bar';
         const chartData = section.content.data || { labels: [], values: [] };
-        
+
         return `<div class="chart-content">
             <div class="chart-container">
                 <canvas class="chart-canvas" data-type="${chartType}" data-chart='${JSON.stringify(chartData)}'></canvas>
             </div>
-        </div>`; }
+        </div>`;
         
       default:
         return `<div>未知的章节类型</div>`;
