@@ -1,0 +1,134 @@
+.theme-color-picker {
+  position: fixed;
+  top: 80px;
+  right: 300px;
+  z-index: 999;
+}
+
+.theme-color-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.theme-color-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.theme-color-button svg {
+  font-size: 1.2rem;
+}
+
+.color-picker-panel {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 280px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.color-picker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.color-picker-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.color-picker-header .close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #999;
+  padding: 0;
+  line-height: 1;
+}
+
+.color-type-selector {
+  display: flex;
+  padding: 15px;
+  gap: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.color-type {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.color-type:hover {
+  background-color: #f5f5f5;
+}
+
+.color-type.active {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.color-preview {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+}
+
+.color-picker-content {
+  padding: 15px;
+}
+
+.color-picker-footer {
+  padding: 10px 15px;
+  border-top: 1px solid #eee;
+  font-size: 0.8rem;
+  color: #666;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .theme-color-picker {
+    top: auto;
+    bottom: 20px;
+    right: 160px;
+  }
+  
+  .theme-color-button {
+    padding: 8px 16px;
+  }
+  
+  .theme-color-button span {
+    display: none;
+  }
+  
+  .color-picker-panel {
+    right: -100px;
+    bottom: 50px;
+    top: auto;
+  }
+}

@@ -1,0 +1,154 @@
+.content-section {
+  padding: var(--section-padding);
+  margin-bottom: 30px;
+}
+
+.content-section:nth-child(odd) {
+  background-color: var(--white);
+}
+
+.content-section:nth-child(even) {
+  background-color: var(--light-bg);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.section-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* 文本内容样式 */
+.text-content p {
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+/* 图片内容样式 */
+.image-content {
+  text-align: center;
+}
+
+.section-image {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 卡片内容样式 */
+.cards-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  flex: 1;
+  min-width: 250px;
+  max-width: 350px;
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.card-body p {
+  margin-bottom: 10px;
+}
+
+/* 图表内容样式 */
+.chart-content {
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.chart-placeholder {
+  text-align: center;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+.chart-placeholder h4 {
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.chart-placeholder pre {
+  text-align: left;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 4px;
+  overflow: auto;
+  font-size: 0.9rem;
+}
+
+.image-grid {
+  display: grid;
+  gap: 15px;
+  width: 100%;
+}
+
+.image-grid.grid-1 {
+  grid-template-columns: 1fr;
+}
+
+.image-grid.grid-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.image-grid.grid-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.image-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  /* 添加最小高度确保图片容器始终可见 */
+  min-height: 100px;
+}
+
+.image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .image-grid.grid-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-grid.grid-2,
+  .image-grid.grid-3 {
+    grid-template-columns: 1fr;
+  }
+}

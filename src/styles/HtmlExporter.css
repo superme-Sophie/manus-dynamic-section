@@ -1,0 +1,78 @@
+.html-exporter {
+  position: fixed;
+  top: 80px;
+  right: 180px; /* 调整位置，避免与ExportPanel重叠 */
+  z-index: 999;
+}
+
+.export-html-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.export-html-button:hover {
+  background-color: #e8b73e;
+  transform: translateY(-2px);
+}
+
+.export-icon {
+  font-size: 1.2rem;
+}
+
+.export-notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  z-index: 1100;
+  animation: fadeInOut 3s ease-in-out;
+}
+
+.export-notification.success {
+  background-color: #4caf50;
+}
+
+.export-notification.error {
+  background-color: #f44336;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .html-exporter {
+    top: auto;
+    bottom: 20px;
+    right: 90px;
+  }
+  
+  .export-html-button {
+    padding: 8px 16px;
+  }
+  
+  .export-html-button span {
+    display: none;
+  }
+  
+  .export-icon {
+    margin: 0;
+  }
+}

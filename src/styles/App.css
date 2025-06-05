@@ -1,0 +1,294 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+:root {
+  --primary-color: #3a6ea5;
+  --secondary-color: #ff6b6b;
+  --accent-color: #f9c74f;
+  --text-color: #333;
+  --light-bg: #f8f9fa;
+  --white: #ffffff;
+  --section-padding: 60px 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.app-header {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  height: 80px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* 导航栏样式 */
+.section-nav {
+  display: flex;
+  align-items: center;
+}
+
+.section-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.section-nav li {
+  margin-left: 20px;
+}
+
+.section-nav li a {
+  color: var(--white);
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.section-nav li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.hero {
+  background: linear-gradient(
+    rgba(58, 110, 165, 0.8), 
+    rgba(58, 110, 165, 0.9)
+  );
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--white);
+  padding-top: 80px;
+  margin-top: 80px;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+
+.content-area {
+  flex: 1;
+  padding: 20px;
+}
+
+.sidebar {
+  width: 300px;
+  padding: 20px;
+  background-color: var(--light-bg);
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.copyright {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.sections-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+  .main-content {
+    flex-direction: column-reverse;
+  }
+  
+  .sidebar {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .content-area {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .header-content {
+    flex-direction: column;
+  }
+  
+  .section-nav {
+    margin-top: 10px;
+  }
+  
+  .section-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .section-nav li {
+    margin: 5px 10px;
+  }
+  
+  .app-header {
+    height: auto;
+    padding: 15px 0;
+  }
+}
+
+/* 导出通知样式 */
+.export-notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary-color);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  z-index: 2000;
+}
+
+.export-notification.success {
+  background-color: #4caf50;
+}
+
+/* 确保按钮样式统一使用主题色 */
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.primary-button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.primary-button:hover {
+  filter: brightness(1.1);
+}
+
+.secondary-button {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.secondary-button:hover {
+  filter: brightness(1.1);
+}
+
+.accent-button {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.accent-button:hover {
+  filter: brightness(1.1);
+}
+
+/* 内容区域样式 */
+.content-section {
+  margin-bottom: 60px;
+  padding: 50px 30px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.section-title h2 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+}
+
+.section-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* 添加锚点跳转平滑滚动效果 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 为锚点跳转添加顶部偏移，避免被固定导航栏遮挡 */
+.sections-container > div {
+  scroll-margin-top: 90px;
+}
+
+section.content-section {
+  scroll-margin-top: 90px;
+}

@@ -1,0 +1,121 @@
+.chart-data-editor {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.chart-data-editor .form-group {
+  margin-bottom: 20px;
+}
+
+.chart-data-editor label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.chart-data-editor input[type="text"],
+.chart-data-editor input[type="number"] {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.color-picker-container {
+  position: relative;
+}
+
+.color-preview {
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+}
+
+.color-picker-popover {
+  position: absolute;
+  z-index: 2;
+  top: 45px;
+  left: 0;
+}
+
+.color-picker-cover {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.data-table {
+  margin-top: 10px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+
+.data-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+.data-table th {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.data-table td {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table input {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.add-row-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.add-row-button:hover {
+  background-color: #2c5a8a;
+}
+
+.remove-row-button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.remove-row-button:hover {
+  background-color: #e05555;
+}
+
+.remove-row-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
